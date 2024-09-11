@@ -14,6 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,14 +32,12 @@ public class SellCommand implements TabExecutor, Listener {
             Player player = (Player) sender;
             if (args.length == 1 && args[0].equalsIgnoreCase("info")) {
 
-                // openInfoMenu(player, 1);
-
                 player.sendActionBar(Main.getPrefix() + "Currently disabled!");
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
 
                 return true;
             } else {
-                Inventory inventory = Bukkit.createInventory(null, 54, SELLGUI_TITLE);
+                Inventory inventory = Bukkit.createInventory(player, 6*9, SELLGUI_TITLE);
                 player.openInventory(inventory);
                 return true;
             }
@@ -97,23 +96,24 @@ public class SellCommand implements TabExecutor, Listener {
             Inventory inventory = event.getInventory();
             Player player = (Player) event.getPlayer();
             double total = 0;
+
             List<ItemStack> itemsToReturn = new ArrayList<>();
+            List<ItemStack> selledItems = new ArrayList<>();
 
             for (ItemStack item : inventory.getContents()) {
-                if (item != null && isSellable(item.getType())) {
+                if (item != null && isSellable(item)) {
                     total += getPrice(item.getType()) * item.getAmount();
-                    player.getInventory().remove(item);
+                    selledItems.add(item);
                 } else if (item != null) {
                     itemsToReturn.add(item);
                 }
             }
 
-            if (total > 0) {
-                player.sendMessage(Main.getPrefix() + "You selled your items for a total: §a" + total);
+            if (!selledItems.isEmpty()) {
+                player.sendMessage(Main.getPrefix() + "You selled §e" + selledItems.size() + " §7items for a total: §a" + total);
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1.0f, 1.0f);
 
                 Main.getEconomy().depositPlayer(player, total);
-
             } else {
                 player.sendMessage(Main.getPrefix() + "No sellable items found!");
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
@@ -125,7 +125,39 @@ public class SellCommand implements TabExecutor, Listener {
         }
     }
 
-    private boolean isSellable(Material material) {
+    private boolean isSellable(ItemStack item) {
+        Material material = item.getType();
+
+        if (!isSellableMaterial(material)) {
+            Main.getInstance().getLogger().info("Item " + item + " is not sellable due to its material.");
+            return false;
+        }
+
+        if (item.hasItemMeta()) {
+            ItemMeta meta = item.getItemMeta();
+
+            if (meta.hasCustomModelData()) {
+                Main.getInstance().getLogger().info("Item " + item + " is not sellable due to custom model data.");
+                return false;
+            }
+
+            if (meta.hasAttributeModifiers()) {
+                Main.getInstance().getLogger().info("Item " + item + " is not sellable due to attribute modifiers.");
+                return false;
+            }
+
+            if (meta.hasLore()) {
+                Main.getInstance().getLogger().info("Item " + item + " is not sellable due to lore.");
+                return false;
+            }
+        }
+
+        Main.getInstance().getLogger().info("Item " + item + " is sellable.");
+        return true;
+    }
+
+
+    private boolean isSellableMaterial(Material material) {
         for (SellableItems item : SellableItems.values()) {
             if (item.getMaterial() == material) {
                 return true;
