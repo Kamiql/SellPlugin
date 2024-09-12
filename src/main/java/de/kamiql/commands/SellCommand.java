@@ -67,8 +67,11 @@ public class SellCommand implements TabExecutor, Listener {
             }
 
             if (!selledItems.isEmpty()) {
+                String message = new Messages().getMessage("data.messages.selled")
+                        .replace("{total.price}", String.valueOf(total))
+                        .replace("{total.count}", String.valueOf(selledItems.size()));
 
-                player.sendMessage(new Messages().getMessage("data.messages.selled"));
+                player.sendMessage(message);
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1.0f, 1.0f);
 
                 Main.getEconomy().depositPlayer(player, total);

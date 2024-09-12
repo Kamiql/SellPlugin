@@ -10,9 +10,7 @@ data:
     # {total.price} = money the player earned
     # {total.count} = items the player sold
     selled:
-      "You selled §e {total.count} §7items for a total: §a {total.price}€"
-
-
+      "You selled §e{total.count} §7items for a total: §a{total.price}€"
 
   prefix:
-    "§6§lNOTRIXMC §8• "
+    "§6§lNOTRIXMC §8• §7"
