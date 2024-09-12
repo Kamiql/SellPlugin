@@ -69,14 +69,14 @@ tasks {
 
         commands {
             register("sell") {
-                description = "sell items!"
+                description = "Verkaufe Items!"
                 usage = "/sell <info>"
                 permission = "sell.commands.sell"
                 aliases = listOf("sell", "verkaufen")
             }
         }
 
-        depend = listOf("Vault", "Essentials")
+        depend = listOf("Vault")
 
     }
 }

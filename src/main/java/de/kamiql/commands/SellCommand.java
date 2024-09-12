@@ -2,6 +2,7 @@ package de.kamiql.commands;
 
 import de.kamiql.Main;
 import de.kamiql.commands.enums.SellableItems;
+import de.kamiql.util.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -23,7 +24,6 @@ import java.util.List;
 
 public class SellCommand implements TabExecutor, Listener {
 
-    private static final String INFOGUI_TITLE = "§8§lInfo Menu";
     private static final String SELLGUI_TITLE = "§8§lSell";
 
     @Override
@@ -32,7 +32,7 @@ public class SellCommand implements TabExecutor, Listener {
             Player player = (Player) sender;
             if (args.length == 1 && args[0].equalsIgnoreCase("info")) {
 
-                player.sendActionBar(Main.getPrefix() + "Currently disabled!");
+                player.sendActionBar(new Messages().getMessage("data.messages.disabled"));
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
 
                 return true;
@@ -44,49 +44,6 @@ public class SellCommand implements TabExecutor, Listener {
         }
         return false;
     }
-    /*
-        private void openInfoMenu(Player player, int page) {
-            Inventory inventory = Bukkit.createInventory(null, 6*9, INFOGUI_TITLE);
-
-            ItemStack glassPane = new ItemStack(Material.WHITE_STAINED_GLASS_PANE);
-            ItemMeta meta = glassPane.getItemMeta();
-            meta.setDisplayName(" ");
-            glassPane.setItemMeta(meta);
-
-            for (int i = 0; i < 54; i++) {
-                if (!((i >= 10 && i <= 16) || (i >= 19 && i <= 25) || (i >= 28 && i <= 34) || (i >= 37 && i <= 43))) {
-                    inventory.setItem(i, glassPane);
-                }
-            }
-
-            player.openInventory(inventory);
-        }
-
-        private void openCategoryMenu(Player player, String category, int page) {
-            Inventory inventory = Bukkit.createInventory(null, 54, INFOGUI_TITLE);
-
-            ItemStack glassPane = new ItemStack(Material.WHITE_STAINED_GLASS_PANE);
-            ItemMeta meta = glassPane.getItemMeta();
-            meta.setDisplayName(" ");
-            glassPane.setItemMeta(meta);
-
-            for (int i = 0; i < 54; i++) {
-                if (!((i >= 10 && i <= 16) || (i >= 19 && i <= 25) || (i >= 28 && i <= 34) || (i >= 37 && i <= 43))) {
-                    inventory.setItem(i, glassPane);
-                }
-            }
-
-            player.openInventory(inventory);
-        }
-
-        @EventHandler
-        public void onInventoryClick(InventoryClickEvent event) {
-            if (event.getWhoClicked() instanceof Player player) {
-
-            }
-        }
-     */
-
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
@@ -110,12 +67,13 @@ public class SellCommand implements TabExecutor, Listener {
             }
 
             if (!selledItems.isEmpty()) {
-                player.sendMessage(Main.getPrefix() + "You selled §e" + selledItems.size() + " §7items for a total: §a" + total);
+
+                player.sendMessage(new Messages().getMessage("data.messages.selled"));
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1.0f, 1.0f);
 
                 Main.getEconomy().depositPlayer(player, total);
             } else {
-                player.sendMessage(Main.getPrefix() + "No sellable items found!");
+                player.sendMessage(new Messages().getMessage("data.messages.noItem"));
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
             }
 
@@ -129,7 +87,6 @@ public class SellCommand implements TabExecutor, Listener {
         Material material = item.getType();
 
         if (!isSellableMaterial(material)) {
-            Main.getInstance().getLogger().info("Item " + item + " is not sellable due to its material.");
             return false;
         }
 
@@ -137,22 +94,17 @@ public class SellCommand implements TabExecutor, Listener {
             ItemMeta meta = item.getItemMeta();
 
             if (meta.hasCustomModelData()) {
-                Main.getInstance().getLogger().info("Item " + item + " is not sellable due to custom model data.");
                 return false;
             }
 
             if (meta.hasAttributeModifiers()) {
-                Main.getInstance().getLogger().info("Item " + item + " is not sellable due to attribute modifiers.");
                 return false;
             }
 
             if (meta.hasLore()) {
-                Main.getInstance().getLogger().info("Item " + item + " is not sellable due to lore.");
                 return false;
             }
         }
-
-        Main.getInstance().getLogger().info("Item " + item + " is sellable.");
         return true;
     }
 

@@ -221,7 +221,7 @@ public enum SellableItems {
     }
 
     public double getPrice() {
-        FileConfiguration config = Main.getInstance().getConfig();
+        FileConfiguration config = Main.getItemConfig();
         String path = "items." + this.material.toString();
         return config.contains(path) ? config.getDouble(path) : 0.0;
     }

@@ -4,6 +4,7 @@ import de.kamiql.commands.SellCommand;
 import de.kamiql.commands.enums.SellableItems;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +16,8 @@ public class Main extends JavaPlugin {
     private static Economy econ = null;
 
     private static Main instance;
+    private static YamlConfiguration itemConfig;
+    private static YamlConfiguration messageConfig;
 
     @Override
     public void onEnable() {
@@ -24,23 +27,44 @@ public class Main extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        setupConfig();
 
-        this.getCommand("sell").setExecutor(new SellCommand());
-        this.getServer().getPluginManager().registerEvents(new SellCommand(), this);
-    }
-
-    private void setupConfig() {
         File dataFolder = this.getDataFolder();
         if (!dataFolder.exists()) {
             dataFolder.mkdir();
         }
 
-        FileConfiguration config = this.getConfig();
+        setupItemConfig();
+        setupMessageConfig();
+
+        this.saveDefaultConfig();
+
+        this.getCommand("sell").setExecutor(new SellCommand());
+        this.getServer().getPluginManager().registerEvents(new SellCommand(), this);
+    }
+
+    private void setupMessageConfig() {
+        File file = new File(this.getDataFolder(), "messages.yml");
+        if (!file.exists()) {
+            file.getParentFile().mkdirs();
+            saveResource("messages.yml", false);
+        }
+
+        messageConfig = YamlConfiguration.loadConfiguration(file);
+    }
+
+    private void setupItemConfig() {
+        File file = new File(this.getDataFolder(), "items.yml");
+        if (!file.exists()) {
+            file.getParentFile().mkdirs();
+            saveResource("items.yml", false);
+        }
+
+        itemConfig = YamlConfiguration.loadConfiguration(file);
+
         Arrays.stream(SellableItems.values()).forEach(item -> {
             String path = "items." + item.getMaterial().toString();
-            if (!config.contains(path)) {
-                config.set(path, 0.0);
+            if (!itemConfig.contains(path)) {
+                itemConfig.set(path, 0.0);
             }
         });
         this.saveConfig();
@@ -58,12 +82,20 @@ public class Main extends JavaPlugin {
         return true;
     }
 
+    public static YamlConfiguration getItemConfig() {
+        return itemConfig;
+    }
+
+    public static YamlConfiguration getMessageConfig() {
+        return messageConfig;
+    }
+
     public static Main getInstance() {
         return instance;
     }
 
     public static String getPrefix() {
-        return "§7[§eSELL§7] §7";
+        return messageConfig.getString("data.prefix", "§7[§eSELL§7] §7");
     }
 
     public static Economy getEconomy() {
