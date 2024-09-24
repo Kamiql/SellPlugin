@@ -3,7 +3,7 @@ import net.minecrell.pluginyml.bukkit.BukkitPluginDescription
 plugins {
     id("java")
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.gradleup.shadow") version "8.3.1"
     id("maven-publish")
 }
 
@@ -18,9 +18,8 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT")
-    bukkitLibrary("org.mongodb:mongodb-driver-legacy:4.5.1")
-    bukkitLibrary("net.dv8tion:JDA:5.0.2")
-    implementation("com.github.MilkBowl:VaultAPI:1.7")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+    implementation("com.github.stefvanschie.inventoryframework:IF:0.10.17")
 }
 
 java {
@@ -48,10 +47,12 @@ tasks {
         archiveVersion.set("1.0.0")
         archiveClassifier.set("")
         mergeServiceFiles()
-        manifest {
-            attributes["Main-Class"] = "de.kamiql.Main"
+
+        relocate("com.github.stefvanschie.inventoryframework", "de.kamiql.inventoryframework")
+
+        dependencies {
+            include(dependency("com.github.stefvanschie.inventoryframework:IF"))
         }
-        configurations = listOf(project.configurations.runtimeClasspath.get())
     }
 
     bukkit {
@@ -78,5 +79,6 @@ tasks {
 
         depend = listOf("Vault")
 
+        load = BukkitPluginDescription.PluginLoadOrder.POSTWORLD
     }
 }

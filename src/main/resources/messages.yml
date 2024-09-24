@@ -1,16 +1,19 @@
 data:
   messages:
-    disabled:
-      "Currently disabled!"
+    sellCommand:
 
-    noItem:
-      "No sellable items found!"
+      noItem:
+        "No sellable items found!"
 
-    # Placeholders:
-    # {total.price} = money the player earned
-    # {total.count} = items the player sold
-    selled:
-      "You selled §e{total.count} §7items for a total: §a{total.price}€"
+      # Placeholders:
+      # {total.price} = money the player earned
+      # {total.stack_count} = Stacks the player sold
+      # {total.item_count} = Items the player sold
+      selled:
+        "You selled §e{total.stack_count} §7stacks §8({total.item_count} items) §7for a total: §a{total.price}€"
+
+    sellAdminCommand:
+
 
   prefix:
     "§6§lNOTRIXMC §8• §7"

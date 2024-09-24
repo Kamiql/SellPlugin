@@ -1,182 +1,757 @@
 items:
-  COAL: 3.0
-  IRON_INGOT: 5.0
-  GOLD_INGOT: 5.0
-  DIAMOND: 20.0
-  EMERALD: 15.0
-  REDSTONE: 3.0
-  LAPIS_LAZULI: 3.0
-  NETHERITE_INGOT: 200.0
-  COPPER_INGOT: 5.0
-  RAW_COPPER: 4.0
-  RAW_GOLD: 4.0
-  RAW_IRON: 4.0
-  COAL_ORE: 7.0
-  IRON_ORE: 7.0
-  GOLD_ORE: 7.0
-  DIAMOND_ORE: 150.0
-  EMERALD_ORE: 250.0
-  REDSTONE_ORE: 5.0
-  LAPIS_ORE: 5.0
-  NETHER_GOLD_ORE: 5.0
-  ANCIENT_DEBRIS: 45.0
-  COPPER_ORE: 7.0
-  DEEPSLATE_COAL_ORE: 50.0
-  DEEPSLATE_IRON_ORE: 10.0
-  DEEPSLATE_COPPER_ORE: 10.0
-  DEEPSLATE_GOLD_ORE: 10.0
-  DEEPSLATE_REDSTONE_ORE: 10.0
-  DEEPSLATE_EMERALD_ORE: 1000.0
-  DEEPSLATE_LAPIS_ORE: 10.0
-  DEEPSLATE_DIAMOND_ORE: 10.0
-  IRON_BLOCK: 70.0
-  GOLD_BLOCK: 70.0
-  DIAMOND_BLOCK: 200.0
-  EMERALD_BLOCK: 150.0
-  REDSTONE_BLOCK: 50.0
-  LAPIS_BLOCK: 30.0
-  COPPER_BLOCK: 50.0
-  NETHERITE_BLOCK: 2000.0
-  OAK_LOG: 5.0
-  SPRUCE_LOG: 5.0
-  BIRCH_LOG: 5.0
-  JUNGLE_LOG: 5.0
-  ACACIA_LOG: 5.0
-  DARK_OAK_LOG: 5.0
-  MANGROVE_LOG: 5.0
-  CHERRY_LOG: 5.0
-  BAMBOO_BLOCK: 5.0
-  CRIMSON_STEM: 5.0
-  WARPED_STEM: 5.0
-  OAK_PLANKS: 2.0
-  SPRUCE_PLANKS: 2.0
-  BIRCH_PLANKS: 2.0
-  JUNGLE_PLANKS: 2.0
-  ACACIA_PLANKS: 2.0
-  DARK_OAK_PLANKS: 2.0
-  MANGROVE_PLANKS: 2.0
-  CHERRY_PLANKS: 2.0
-  BAMBOO_PLANKS: 2.0
-  CRIMSON_PLANKS: 2.0
-  WARPED_PLANKS: 2.0
-  COBBLESTONE: 2.0
-  STONE: 2.5
-  GRANITE: 2.0
-  DIORITE: 2.0
-  ANDESITE: 2.0
-  SAND: 2.0
-  SANDSTONE: 7.0
-  GRAVEL: 2.0
-  CLAY_BALL: 1.0
-  CLAY: 4.0
-  DIRT: 0.5
-  GRASS_BLOCK: 4.0
-  SNOWBALL: 0.5
-  ICE: 2.0
-  PACKED_ICE: 20.0
-  BLUE_ICE: 200.0
-  OBSIDIAN: 50.0
-  NETHERRACK: 2.0
-  SOUL_SAND: 2.0
-  SOUL_SOIL: 2.0
-  BASALT: 2.0
-  BLACKSTONE: 2.0
-  GLOWSTONE: 4.0
-  QUARTZ: 4.0
-  ENDER_PEARL: 50.0
-  SLIME_BALL: 10.0
-  SLIME_BLOCK: 100.0
-  HONEY_BLOCK: 100.0
-  HONEYCOMB: 25.0
-  HONEY_BOTTLE: 25.0
-  WHEAT: 3.0
-  CARROT: 3.0
-  POTATO: 3.0
-  BEETROOT: 3.0
-  SUGAR_CANE: 5.0
-  PUMPKIN: 3.0
-  MELON_SLICE: 1.0
-  MELON: 10.0
-  BAMBOO: 1.0
-  CACTUS: 1.0
-  LEATHER: 4.0
-  BEEF: 3.0
-  COOKED_BEEF: 5.0
-  PORKCHOP: 3.0
-  COOKED_PORKCHOP: 5.0
-  CHICKEN: 3.0
-  COOKED_CHICKEN: 5.0
-  MUTTON: 3.0
-  COOKED_MUTTON: 5.0
-  RABBIT: 3.0
-  COOKED_RABBIT: 5.0
-  COD: 3.0
-  COOKED_COD: 5.0
-  SALMON: 3.0
-  COOKED_SALMON: 5.0
-  WHITE_CONCRETE: 10.0
-  ORANGE_CONCRETE: 10.0
-  MAGENTA_CONCRETE: 10.0
-  LIGHT_BLUE_CONCRETE: 10.0
-  YELLOW_CONCRETE: 10.0
-  LIME_CONCRETE: 10.0
-  PINK_CONCRETE: 10.0
-  GRAY_CONCRETE: 10.0
-  LIGHT_GRAY_CONCRETE: 10.0
-  CYAN_CONCRETE: 10.0
-  PURPLE_CONCRETE: 10.0
-  BLUE_CONCRETE: 10.0
-  BROWN_CONCRETE: 10.0
-  GREEN_CONCRETE: 10.0
-  RED_CONCRETE: 10.0
-  BLACK_CONCRETE: 10.0
-  WHITE_CONCRETE_POWDER: 5.0
-  ORANGE_CONCRETE_POWDER: 5.0
-  MAGENTA_CONCRETE_POWDER: 5.0
-  LIGHT_BLUE_CONCRETE_POWDER: 5.0
-  YELLOW_CONCRETE_POWDER: 5.0
-  LIME_CONCRETE_POWDER: 5.0
-  PINK_CONCRETE_POWDER: 5.0
-  GRAY_CONCRETE_POWDER: 5.0
-  LIGHT_GRAY_CONCRETE_POWDER: 5.0
-  CYAN_CONCRETE_POWDER: 5.0
-  PURPLE_CONCRETE_POWDER: 5.0
-  BLUE_CONCRETE_POWDER: 5.0
-  BROWN_CONCRETE_POWDER: 5.0
-  GREEN_CONCRETE_POWDER: 5.0
-  RED_CONCRETE_POWDER: 5.0
-  BLACK_CONCRETE_POWDER: 5.0
-  WHITE_TERRACOTTA: 10.0
-  ORANGE_TERRACOTTA: 10.0
-  MAGENTA_TERRACOTTA: 10.0
-  LIGHT_BLUE_TERRACOTTA: 10.0
-  YELLOW_TERRACOTTA: 10.0
-  LIME_TERRACOTTA: 10.0
-  PINK_TERRACOTTA: 10.0
-  GRAY_TERRACOTTA: 10.0
-  LIGHT_GRAY_TERRACOTTA: 10.0
-  CYAN_TERRACOTTA: 10.0
-  PURPLE_TERRACOTTA: 10.0
-  BLUE_TERRACOTTA: 10.0
-  BROWN_TERRACOTTA: 10.0
-  GREEN_TERRACOTTA: 10.0
-  RED_TERRACOTTA: 10.0
-  BLACK_TERRACOTTA: 10.0
-  HEART_OF_THE_SEA: 250.0
-  NAUTILUS_SHELL: 150.0
-  EXPERIENCE_BOTTLE: 25.0
-  ENCHANTED_GOLDEN_APPLE: 2500.0
-  BOOK: 5.0
-  TOTEM_OF_UNDYING: 750.0
-  TRIDENT: 2500.0
-  ELYTRA: 10000.0
-  PHANTOM_MEMBRANE: 25.0
-  SADDLE: 250.0
-  NAME_TAG: 200.0
-  NETHER_STAR: 2500.0
-  ENDER_EYE: 500.0
-  ENDER_CHEST: 1250.0
-  BLAZE_ROD: 25.0
-  GHAST_TEAR: 200.0
-  WITHER_ROSE: 250.0
-  TURTLE_HELMET: 500.0
+    COAL:
+        price: 3.0
+        category: "MATERIAL"
+
+    IRON_INGOT:
+        price: 5.0
+        category: "MATERIAL"
+
+    GOLD_INGOT:
+        price: 5.0
+        category: "MATERIAL"
+
+    DIAMOND:
+        price: 20.0
+        category: "MATERIAL"
+
+    EMERALD:
+        price: 15.0
+        category: "MATERIAL"
+
+    REDSTONE:
+        price: 3.0
+        category: "MATERIAL"
+
+    LAPIS_LAZULI:
+        price: 3.0
+        category: "MATERIAL"
+
+    NETHERITE_INGOT:
+        price: 200.0
+        category: "MATERIAL"
+
+    COPPER_INGOT:
+        price: 5.0
+        category: "MATERIAL"
+
+    RAW_COPPER:
+        price: 4.0
+        category: "MATERIAL"
+
+    RAW_GOLD:
+        price: 4.0
+        category: "MATERIAL"
+
+    RAW_IRON:
+        price: 4.0
+        category: "MATERIAL"
+
+    COAL_ORE:
+        price: 7.0
+        category: "MATERIAL"
+
+    IRON_ORE:
+        price: 7.0
+        category: "MATERIAL"
+
+    GOLD_ORE:
+        price: 7.0
+        category: "MATERIAL"
+
+    DIAMOND_ORE:
+        price: 150.0
+        category: "MATERIAL"
+
+    EMERALD_ORE:
+        price: 250.0
+        category: "MATERIAL"
+
+    REDSTONE_ORE:
+        price: 5.0
+        category: "MATERIAL"
+
+    LAPIS_ORE:
+        price: 5.0
+        category: "MATERIAL"
+
+    NETHER_GOLD_ORE:
+        price: 5.0
+        category: "MATERIAL"
+
+    ANCIENT_DEBRIS:
+        price: 45.0
+        category: "MATERIAL"
+
+    COPPER_ORE:
+        price: 7.0
+        category: "MATERIAL"
+
+    DEEPSLATE_COAL_ORE:
+        price: 50.0
+        category: "MATERIAL"
+
+    DEEPSLATE_IRON_ORE:
+        price: 10.0
+        category: "MATERIAL"
+
+    DEEPSLATE_COPPER_ORE:
+        price: 10.0
+        category: "MATERIAL"
+
+    DEEPSLATE_GOLD_ORE:
+        price: 10.0
+        category: "MATERIAL"
+
+    DEEPSLATE_REDSTONE_ORE:
+        price: 10.0
+        category: "MATERIAL"
+
+    DEEPSLATE_EMERALD_ORE:
+        price: 1000.0
+        category: "MATERIAL"
+
+    DEEPSLATE_LAPIS_ORE:
+        price: 10.0
+        category: "MATERIAL"
+
+    DEEPSLATE_DIAMOND_ORE:
+        price: 10.0
+        category: "MATERIAL"
+
+    IRON_BLOCK:
+        price: 70.0
+        category: "MATERIAL"
+
+    GOLD_BLOCK:
+        price: 70.0
+        category: "MATERIAL"
+
+    DIAMOND_BLOCK:
+        price: 200.0
+        category: "MATERIAL"
+
+    EMERALD_BLOCK:
+        price: 150.0
+        category: "MATERIAL"
+
+    REDSTONE_BLOCK:
+        price: 50.0
+        category: "MATERIAL"
+
+    LAPIS_BLOCK:
+        price: 30.0
+        category: "MATERIAL"
+
+    COPPER_BLOCK:
+        price: 50.0
+        category: "MATERIAL"
+
+    NETHERITE_BLOCK:
+        price: 2000.0
+        category: "MATERIAL"
+
+    OAK_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    SPRUCE_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    BIRCH_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    JUNGLE_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    ACACIA_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    DARK_OAK_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    MANGROVE_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    CHERRY_LOG:
+        price: 5.0
+        category: "WOOD"
+
+    BAMBOO_BLOCK:
+        price: 5.0
+        category: "WOOD"
+
+    CRIMSON_STEM:
+        price: 5.0
+        category: "WOOD"
+
+    WARPED_STEM:
+        price: 5.0
+        category: "WOOD"
+
+    OAK_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    SPRUCE_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    BIRCH_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    JUNGLE_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    ACACIA_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    DARK_OAK_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    MANGROVE_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    CHERRY_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    BAMBOO_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    CRIMSON_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    WARPED_PLANKS:
+        price: 2.0
+        category: "WOOD"
+
+    COBBLESTONE:
+        price: 2.0
+        category: "BUILDING"
+
+    STONE:
+        price: 2.5
+        category: "BUILDING"
+
+    GRANITE:
+        price: 2.0
+        category: "BUILDING"
+
+    DIORITE:
+        price: 2.0
+        category: "BUILDING"
+
+    ANDESITE:
+        price: 2.0
+        category: "BUILDING"
+
+    SAND:
+        price: 2.0
+        category: "BUILDING"
+
+    SANDSTONE:
+        price: 7.0
+        category: "BUILDING"
+
+    GRAVEL:
+        price: 2.0
+        category: "BUILDING"
+
+    CLAY_BALL:
+        price: 1.0
+        category: "BUILDING"
+
+    CLAY:
+        price: 4.0
+        category: "BUILDING"
+
+    DIRT:
+        price: 0.5
+        category: "BUILDING"
+
+    GRASS_BLOCK:
+        price: 4.0
+        category: "BUILDING"
+
+    SNOWBALL:
+        price: 0.5
+        category: "BUILDING"
+
+    ICE:
+        price: 2.0
+        category: "BUILDING"
+
+    PACKED_ICE:
+        price: 20.0
+        category: "BUILDING"
+
+    BLUE_ICE:
+        price: 200.0
+        category: "BUILDING"
+
+    OBSIDIAN:
+        price: 50.0
+        category: "BUILDING"
+
+    NETHERRACK:
+        price: 2.0
+        category: "BUILDING"
+
+    SOUL_SAND:
+        price: 2.0
+        category: "BUILDING"
+
+    SOUL_SOIL:
+        price: 2.0
+        category: "BUILDING"
+
+    BASALT:
+        price: 2.0
+        category: "BUILDING"
+
+    BLACKSTONE:
+        price: 2.0
+        category: "BUILDING"
+
+    GLOWSTONE:
+        price: 4.0
+        category: "BUILDING"
+
+    QUARTZ:
+        price: 4.0
+        category: "BUILDING"
+
+    ENDER_PEARL:
+        price: 50.0
+        category: "MATERIAL"
+
+    SLIME_BALL:
+        price: 10.0
+        category: "MATERIAL"
+
+    SLIME_BLOCK:
+        price: 100.0
+        category: "BUILDING"
+
+    HONEY_BLOCK:
+        price: 100.0
+        category: "BUILDING"
+
+    HONEYCOMB:
+        price: 25.0
+        category: "MATERIAL"
+
+    HONEY_BOTTLE:
+        price: 25.0
+        category: "FOOD"
+
+    WHEAT:
+        price: 3.0
+        category: "FOOD"
+
+    CARROT:
+        price: 3.0
+        category: "FOOD"
+
+    POTATO:
+        price: 3.0
+        category: "FOOD"
+
+    BEETROOT:
+        price: 3.0
+        category: "FOOD"
+
+    SUGAR_CANE:
+        price: 5.0
+        category: "FOOD"
+
+    PUMPKIN:
+        price: 3.0
+        category: "FOOD"
+
+    MELON_SLICE:
+        price: 1.0
+        category: "FOOD"
+
+    MELON:
+        price: 10.0
+        category: "FOOD"
+
+    BAMBOO:
+        price: 1.0
+        category: "FOOD"
+
+    CACTUS:
+        price: 1.0
+        category: "FOOD"
+
+    LEATHER:
+        price: 4.0
+        category: "OTHER"
+
+    BEEF:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_BEEF:
+        price: 5.0
+        category: "FOOD"
+
+    PORKCHOP:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_PORKCHOP:
+        price: 5.0
+        category: "FOOD"
+
+    CHICKEN:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_CHICKEN:
+        price: 5.0
+        category: "FOOD"
+
+    MUTTON:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_MUTTON:
+        price: 5.0
+        category: "FOOD"
+
+    RABBIT:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_RABBIT:
+        price: 5.0
+        category: "FOOD"
+
+    COD:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_COD:
+        price: 5.0
+        category: "FOOD"
+
+    SALMON:
+        price: 3.0
+        category: "FOOD"
+
+    COOKED_SALMON:
+        price: 5.0
+        category: "FOOD"
+
+    WHITE_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    ORANGE_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    MAGENTA_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    LIGHT_BLUE_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    YELLOW_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    LIME_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    PINK_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    GRAY_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    LIGHT_GRAY_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    CYAN_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    PURPLE_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    BLUE_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    BROWN_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    GREEN_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    RED_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    BLACK_CONCRETE:
+        price: 10.0
+        category: "BUILDING"
+
+    WHITE_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    ORANGE_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    MAGENTA_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    LIGHT_BLUE_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    YELLOW_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    LIME_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    PINK_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    GRAY_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    LIGHT_GRAY_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    CYAN_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    PURPLE_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    BLUE_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    BROWN_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    GREEN_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    RED_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    BLACK_CONCRETE_POWDER:
+        price: 5.0
+        category: "BUILDING"
+
+    WHITE_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    ORANGE_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    MAGENTA_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    LIGHT_BLUE_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    YELLOW_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    LIME_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    PINK_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    GRAY_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    LIGHT_GRAY_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    CYAN_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    PURPLE_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    BLUE_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    BROWN_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    GREEN_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    RED_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    BLACK_TERRACOTTA:
+        price: 10.0
+        category: "BUILDING"
+
+    HEART_OF_THE_SEA:
+        price: 250.0
+        category: "OTHER"
+
+    NAUTILUS_SHELL:
+        price: 150.0
+        category: "OTHER"
+
+    EXPERIENCE_BOTTLE:
+        price: 25.0
+        category: "OTHER"
+
+    ENCHANTED_GOLDEN_APPLE:
+        price: 2500.0
+        category: "FOOD"
+
+    BOOK:
+        price: 5.0
+        category: "OTHER"
+
+    TOTEM_OF_UNDYING:
+        price: 750.0
+        category: "OP"
+
+    TRIDENT:
+        price: 2500.0
+        category: "OP"
+
+    ELYTRA:
+        price: 10000.0
+        category: "OP"
+
+    PHANTOM_MEMBRANE:
+        price: 25.0
+        category: "MOB-DROPS"
+
+    SADDLE:
+        price: 250.0
+        category: "OTHER"
+
+    NAME_TAG:
+        price: 200.0
+        category: "OTHER"
+
+    NETHER_STAR:
+        price: 2500.0
+        category: "OP"
+
+    ENDER_EYE:
+        price: 500.0
+        category: "MOB-DROPS"
+
+    BLAZE_ROD:
+        price: 25.0
+        category: "MOB-DROPS"
+
+    GHAST_TEAR:
+        price: 200.0
+        category: "MOB-DROPS"
+
+    WITHER_ROSE:
+        price: 250.0
+        category: "MOB-DROPS"
+
+    TURTLE_HELMET:
+        price: 500.0
+        category: "OP"
+
+#
+# Max 16 category's!
+# There always needs to be at least one category
+# "key" should be a String
+#
+
+categories:
+    OTHER:
+        key: "OTHER"
+        displayName: "Anderes"
+        displayMaterial: "LEATHER"
+
+    BUILDING:
+        key: "BUILDING"
+        displayName: "Baublöcke"
+        displayMaterial: "STONE"
+
+    FOOD:
+        key: "FOOD"
+        displayName: "Essen"
+        displayMaterial: "COOKED_PORKCHOP"
+
+    MATERIAL:
+        key: "MATERIAL"
+        displayName: "Materialien"
+        displayMaterial: "DIAMOND_ORE"
+
+    MOB-DROPS:
+        key: "MOB-DROPS"
+        displayName: "Monster Drops"
+        displayMaterial: "ROTTEN_FLESH"
+
+    OP:
+        key: "OP"
+        displayName: "OP"
+        displayMaterial: "NETHER_STAR"

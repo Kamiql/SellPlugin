@@ -1,16 +1,12 @@
 package de.kamiql;
 
 import de.kamiql.commands.SellCommand;
-import de.kamiql.commands.enums.SellableItems;
 import net.milkbowl.vault.economy.Economy;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.util.Arrays;
-
 
 public class Main extends JavaPlugin {
     private static Economy econ = null;
@@ -22,6 +18,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+
         if (!setupEconomy() ) {
             getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
@@ -39,6 +36,7 @@ public class Main extends JavaPlugin {
         this.saveDefaultConfig();
 
         this.getCommand("sell").setExecutor(new SellCommand());
+
         this.getServer().getPluginManager().registerEvents(new SellCommand(), this);
     }
 
@@ -48,7 +46,6 @@ public class Main extends JavaPlugin {
             file.getParentFile().mkdirs();
             saveResource("messages.yml", false);
         }
-
         messageConfig = YamlConfiguration.loadConfiguration(file);
     }
 
@@ -58,15 +55,7 @@ public class Main extends JavaPlugin {
             file.getParentFile().mkdirs();
             saveResource("items.yml", false);
         }
-
         itemConfig = YamlConfiguration.loadConfiguration(file);
-
-        Arrays.stream(SellableItems.values()).forEach(item -> {
-            String path = "items." + item.getMaterial().toString();
-            if (!itemConfig.contains(path)) {
-                itemConfig.set(path, 0.0);
-            }
-        });
         this.saveConfig();
     }
 

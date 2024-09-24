@@ -1,8 +1,9 @@
 package de.kamiql.commands;
 
 import de.kamiql.Main;
-import de.kamiql.commands.enums.SellableItems;
+import de.kamiql.gui.SellGUI;
 import de.kamiql.util.Messages;
+import de.kamiql.util.Sellables;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -27,12 +28,13 @@ public class SellCommand implements TabExecutor, Listener {
     private static final String SELLGUI_TITLE = "§8§lSell";
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (args.length == 1 && args[0].equalsIgnoreCase("info")) {
 
-                player.sendActionBar(new Messages().getMessage("data.messages.disabled"));
+                new SellGUI().openGUI(player);
+
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
 
                 return true;
@@ -55,30 +57,34 @@ public class SellCommand implements TabExecutor, Listener {
             double total = 0;
 
             List<ItemStack> itemsToReturn = new ArrayList<>();
-            List<ItemStack> selledItems = new ArrayList<>();
+            Integer selledItems = 0;
 
             for (ItemStack item : inventory.getContents()) {
                 if (item != null && isSellable(item)) {
                     total += getPrice(item.getType()) * item.getAmount();
-                    selledItems.add(item);
+                    selledItems += item.getAmount();
                 } else if (item != null) {
                     itemsToReturn.add(item);
                 }
             }
 
-            if (!selledItems.isEmpty()) {
-                String message = new Messages().getMessage("data.messages.selled")
+            if (selledItems > 0) {
+                String message = new Messages().getMessage("data.messages.sellCommand.selled")
                         .replace("{total.price}", String.valueOf(total))
-                        .replace("{total.count}", String.valueOf(selledItems.size()));
+                        .replace("{total.item_count}", String.valueOf(selledItems))
+                        .replace("{total.stack_count}", ((double) selledItems / 64) % 1 == 0
+                                ? String.format("%.1f", (double) selledItems / 64)
+                                : String.format("%.2f", (double) selledItems / 64));
 
                 player.sendMessage(message);
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1.0f, 1.0f);
-
                 Main.getEconomy().depositPlayer(player, total);
-            } else {
-                player.sendMessage(new Messages().getMessage("data.messages.noItem"));
+
+            } else if (!itemsToReturn.isEmpty()) {
+                player.sendMessage(new Messages().getMessage("data.messages.sellCommand.noItem"));
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
-            }
+
+            } else return;
 
             for (ItemStack item : itemsToReturn) {
                 player.getInventory().addItem(item);
@@ -89,7 +95,7 @@ public class SellCommand implements TabExecutor, Listener {
     private boolean isSellable(ItemStack item) {
         Material material = item.getType();
 
-        if (!isSellableMaterial(material)) {
+        if (!new Sellables().isSellable(material)) {
             return false;
         }
 
@@ -104,30 +110,14 @@ public class SellCommand implements TabExecutor, Listener {
                 return false;
             }
 
-            if (meta.hasLore()) {
-                return false;
-            }
+            return !meta.hasLore();
         }
         return true;
     }
 
-
-    private boolean isSellableMaterial(Material material) {
-        for (SellableItems item : SellableItems.values()) {
-            if (item.getMaterial() == material) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     private double getPrice(Material material) {
-        for (SellableItems item : SellableItems.values()) {
-            if (item.getMaterial() == material) {
-                return item.getPrice();
-            }
-        }
-        return 0;
+        Double price = new Sellables().getPrice(material);
+        return price != 0 ? price : 0;
     }
 
     @Override
