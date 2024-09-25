@@ -2,6 +2,7 @@ package de.kamiql.commands;
 
 import de.kamiql.Main;
 import de.kamiql.gui.SellGUI;
+import de.kamiql.util.Logger;
 import de.kamiql.util.Messages;
 import de.kamiql.util.Sellables;
 import org.bukkit.Bukkit;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellCommand implements TabExecutor, Listener {
+    private static final Logger logger = Main.getCustomLogger();
 
     private static final String SELLGUI_TITLE = "§8§lSell";
 
@@ -89,6 +91,8 @@ public class SellCommand implements TabExecutor, Listener {
             for (ItemStack item : itemsToReturn) {
                 player.getInventory().addItem(item);
             }
+
+            logger.log("Player " + player.getName() + " sold " + selledItems + " item/s for a " + total + "$");
         }
     }
 

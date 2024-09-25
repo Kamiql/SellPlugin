@@ -147,7 +147,6 @@ public class Sellables {
                 for (Material item : sellables.getSellables()) {
                     String itemCategoryKey = config.getString("items." + item.toString() + ".category");
                     if (currentCategoryKey.equals(itemCategoryKey)) {
-                        logger.info("Item added: " + item);
                         items.add(item);
                     }
                 }
