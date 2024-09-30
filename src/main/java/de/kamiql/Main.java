@@ -1,11 +1,14 @@
 package de.kamiql;
 
+import de.kamiql.commands.ReloadCommand;
 import de.kamiql.commands.SellCommand;
 import de.kamiql.util.Logger;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,14 +21,12 @@ public class Main extends JavaPlugin {
     private static Main instance;
     private static YamlConfiguration itemConfig;
     private static YamlConfiguration messageConfig;
-    private static Logger logger;
 
     @Override
     public void onEnable() {
         instance = this;
-        logger = new Logger().initialize(createLoggerFile());
 
-        if (!setupEconomy() ) {
+        if (!setupEconomy()) {
             getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
@@ -38,32 +39,24 @@ public class Main extends JavaPlugin {
 
         setupItemConfig();
         setupMessageConfig();
-
-        this.saveDefaultConfig();
+        setupLogDirectory();
 
         this.getCommand("sell").setExecutor(new SellCommand());
+        this.getCommand("reload").setExecutor(new ReloadCommand(this));
 
         this.getServer().getPluginManager().registerEvents(new SellCommand(), this);
     }
 
     @Override
     public void onDisable() {
-        logger.close();
+
     }
 
-    private String createLoggerFile() {
-        File dataFolder = this.getDataFolder();
-        File logFile = new File(dataFolder, "sell_log.txt");
-
-        try {
-            if (!logFile.exists()) {
-                logFile.createNewFile();
-            }
-        } catch (IOException e) {
-            getLogger().severe("Fehler beim Erstellen der Logger-Datei: " + e.getMessage());
+    private void setupLogDirectory() {
+        File logFolder = new File(instance.getDataFolder(), "Log");
+        if (!logFolder.exists()) {
+            logFolder.mkdirs();
         }
-
-        return logFile.getAbsolutePath();
     }
 
     private void setupMessageConfig() {
@@ -82,7 +75,6 @@ public class Main extends JavaPlugin {
             saveResource("items.yml", false);
         }
         itemConfig = YamlConfiguration.loadConfiguration(file);
-        this.saveConfig();
     }
 
     private boolean setupEconomy() {
@@ -97,8 +89,25 @@ public class Main extends JavaPlugin {
         return true;
     }
 
-    public static Logger getCustomLogger() {
-        return logger;
+    /**
+     * Creates or retrieves the logger for a specific player. Each player has their own log file located in the 'Log' directory.
+     *
+     * @param player The player whose log file will be created or retrieved.
+     * @return Logger instance for the specified player.
+     */
+    public static Logger getCustomLogger(@NotNull Player player) {
+        File logFolder = new File(instance.getDataFolder(), "Log");
+        File logFile = new File(logFolder, player.getUniqueId() + "_log.txt");
+
+        try {
+            if (!logFile.exists()) {
+                logFile.createNewFile();
+            }
+        } catch (IOException e) {
+            instance.getLogger().severe("Error creating logger file for player " + player.getName() + ": " + e.getMessage());
+        }
+
+        return new Logger().initialize(logFile.getAbsolutePath());
     }
 
     public static YamlConfiguration getItemConfig() {
@@ -107,6 +116,14 @@ public class Main extends JavaPlugin {
 
     public static YamlConfiguration getMessageConfig() {
         return messageConfig;
+    }
+
+    public static void setItemConfig(YamlConfiguration newItemConfig) {
+        itemConfig = newItemConfig;
+    }
+
+    public static void setMessageConfig(YamlConfiguration newMessageConfig) {
+        messageConfig = newMessageConfig;
     }
 
     public static Main getInstance() {
@@ -121,12 +138,6 @@ public class Main extends JavaPlugin {
         return econ;
     }
 
-    /**
-     * Returns the current date and time as a formatted string.
-     *
-     * @param format The format of the date-time string, e.g., "yyyy-MM-dd HH:mm:ss".
-     * @return A string representing the current date and time in the specified format.
-     */
     public static String getDateTime(String format) {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);

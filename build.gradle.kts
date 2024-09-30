@@ -71,9 +71,12 @@ tasks {
         commands {
             register("sell") {
                 description = "Verkaufe Items!"
-                usage = "/sell <info>"
                 permission = "sell.commands.sell"
                 aliases = listOf("sell", "verkaufen")
+            }
+            register("reload") {
+                description = "Reload the Plugin!"
+                permission = "sell.commands.reload"
             }
         }
 

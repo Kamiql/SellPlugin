@@ -61,40 +61,6 @@ public class Sellables {
         return config.contains("items." + material.toString().toUpperCase());
     }
 
-    public boolean setPrice(@NotNull Material material, Double price) {
-        if (config.contains("items." + material)) {
-            try {
-                config.set("items." + material + ".price", price);
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
-        } return false;
-    }
-
-    public boolean addMaterial(@NotNull Material material, Double price, String category) {
-        if (!config.contains("items." + material)) {
-            try {
-                config.set("items." + material + ".price", price);
-                config.set("items." + material + ".category", category);
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
-        } return false;
-    }
-
-    public boolean removeMaterial(@NotNull Material material) {
-        if (config.contains("items." + material)) {
-            try {
-                config.set("items." + material, null);
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
-        } return false;
-    }
-
     public List<ItemCategory> getCategories() {
         List<ItemCategory> categories = new ArrayList<>();
         for (String CATEGORY : config.getConfigurationSection("categories").getKeys(false)) {

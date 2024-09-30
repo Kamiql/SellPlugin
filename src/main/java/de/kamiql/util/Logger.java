@@ -6,11 +6,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Logger {
+public class Logger implements AutoCloseable {
     private String filePath;
     private BufferedWriter writer;
 
-    // Konstruktor
     public Logger() {
     }
 
@@ -39,14 +38,13 @@ public class Logger {
         }
     }
 
-    public void close() {
-        try {
-            if (writer != null) {
-                writer.close();
-            }
-        } catch (IOException e) {
-            System.err.println("Fehler beim Schließen des Loggers: " + e.getMessage());
-        }
+    public String getPath() {
+        return filePath;
+    }
+
+    @Override
+    public void close() throws Exception {
+        writer.close();
     }
 }
 

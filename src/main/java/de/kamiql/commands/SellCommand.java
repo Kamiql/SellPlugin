@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellCommand implements TabExecutor, Listener {
-    private static final Logger logger = Main.getCustomLogger();
 
     private static final String SELLGUI_TITLE = "§8§lSell";
 
@@ -71,7 +70,7 @@ public class SellCommand implements TabExecutor, Listener {
             }
 
             if (selledItems > 0) {
-                String message = new Messages().getMessage("data.messages.sellCommand.selled")
+                String message = new Messages().getMessage("data.messages.sellCommand.sold")
                         .replace("{total.price}", String.valueOf(total))
                         .replace("{total.item_count}", String.valueOf(selledItems))
                         .replace("{total.stack_count}", ((double) selledItems / 64) % 1 == 0
@@ -92,7 +91,7 @@ public class SellCommand implements TabExecutor, Listener {
                 player.getInventory().addItem(item);
             }
 
-            logger.log("Player " + player.getName() + " sold " + selledItems + " item/s for a " + total + "$");
+            Main.getCustomLogger(player).log("Player " + player.getName() + " sold " + selledItems + " item/s for a " + total + "$");
         }
     }
 
