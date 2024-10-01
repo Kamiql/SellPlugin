@@ -2,7 +2,6 @@ package de.kamiql.commands;
 
 import de.kamiql.Main;
 import de.kamiql.gui.SellGUI;
-import de.kamiql.util.Logger;
 import de.kamiql.util.Messages;
 import de.kamiql.util.Sellables;
 import org.bukkit.Bukkit;

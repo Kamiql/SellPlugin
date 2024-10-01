@@ -53,7 +53,10 @@ tasks {
         dependencies {
             include(dependency("com.github.stefvanschie.inventoryframework:IF"))
         }
+
+        destinationDirectory.set(file("C:/Users/kamiql/Desktop/Paper Server/plugins"))
     }
+
 
     bukkit {
         foliaSupported = true

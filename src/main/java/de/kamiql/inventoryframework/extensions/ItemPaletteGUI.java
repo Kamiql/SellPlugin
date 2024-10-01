@@ -14,12 +14,11 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
 import java.util.function.Predicate;
-
-import java.util.LinkedList;
 
 import static java.util.stream.Collectors.toCollection;
 
