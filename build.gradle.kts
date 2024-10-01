@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "de.kamiql"
-version = "2.0.1"
+version = "2.0.2"
 
 repositories {
     mavenCentral()
@@ -44,7 +44,7 @@ tasks {
 
     shadowJar {
         archiveBaseName.set("SellPlugin")
-        archiveVersion.set("2.0.1")
+        archiveVersion.set("2.0.2")
         archiveClassifier.set("")
         mergeServiceFiles()
 
