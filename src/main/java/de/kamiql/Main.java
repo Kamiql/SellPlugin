@@ -25,8 +25,6 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        new I18nProvider(this).initialize(messageConfig, false);
-
         instance = this;
 
         if (!setupEconomy()) {
@@ -41,7 +39,10 @@ public class Main extends JavaPlugin {
         }
 
         setupItemConfig();
+        setupMessageConfig();
         setupLogDirectory();
+
+        new I18nProvider(this).initialize(messageConfig);
 
         this.getCommand("sell").setExecutor(new SellCommand());
         this.getCommand("reload").setExecutor(new ReloadCommand(this));
@@ -62,7 +63,7 @@ public class Main extends JavaPlugin {
     }
 
     private void setupMessageConfig() {
-        File file = new File(this.getDataFolder(), "messages.yml");
+        File file = new File(this.getDataFolder(), "messages/messages.yml");
         messageConfig = YamlConfiguration.loadConfiguration(file);
     }
 
