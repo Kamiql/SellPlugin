@@ -1,10 +1,12 @@
 package de.kamiql.commands;
 
 import de.kamiql.Main;
+import de.kamiql.i18n.core.source.I18n;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -22,39 +24,60 @@ public class ReloadCommand implements TabExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("config")) {
-                sender.sendMessage(Main.getPrefix() + "§aConfiguration reload started...");
-                try {
-                    plugin.reloadConfig();
-                    sender.sendMessage(Main.getPrefix() + "§aMain configuration file successfully reloaded...");
-                } catch (Exception e) {
-                    sender.sendMessage(Main.getPrefix() + "§cMain configuration reload failed...");
-                    throw new RuntimeException(e);
-                }
-            }
-        } else if (args.length == 2) {
-            String fileName = args[1] + ".yml";
-            File configFile = new File(plugin.getDataFolder(), fileName);
-
-            if (configFile.exists()) {
-                sender.sendMessage(Main.getPrefix() + "§aReloading " + fileName + "...");
-                try {
-                    YamlConfiguration newConfig = YamlConfiguration.loadConfiguration(configFile);
-
-                    if (fileName.equals("items.yml")) {
-                        Main.setItemConfig(newConfig);
-                    } else if (fileName.equals("messages.yml")) {
-                        Main.setMessageConfig(newConfig);
+        if (sender instanceof Player player) {
+            if (args.length == 1) {
+                if (args[0].equalsIgnoreCase("config")) {
+                    try {
+                        plugin.reloadConfig();
+                        new I18n.Builder("reloadConfig", player)
+                                .hasPrefix(true)
+                                .withPlaceholder("fileName", args[1])
+                                .build()
+                                .sendMessageAsComponent();
+                    } catch (Exception e) {
+                        new I18n.Builder("reloadError", player)
+                                .hasPrefix(true)
+                                .build()
+                                .sendMessageAsComponent();
+                        throw new RuntimeException(e);
                     }
-
-                    sender.sendMessage(Main.getPrefix() + "§aConfiguration file " + fileName + " successfully reloaded...");
-                } catch (Exception e) {
-                    sender.sendMessage(Main.getPrefix() + "§cReload failed for " + fileName);
-                    throw new RuntimeException(e);
                 }
-            } else {
-                sender.sendMessage(Main.getPrefix() + "§cConfiguration file " + fileName + " not found.");
+            } else if (args.length == 2) {
+                String fileName = args[1] + ".yml";
+                File configFile = new File(plugin.getDataFolder(), fileName);
+
+                if (configFile.exists()) {
+                    new I18n.Builder("reloadFile", player)
+                            .hasPrefix(true)
+                            .withPlaceholder("fileName", args[1])
+                            .build()
+                            .sendMessageAsComponent();
+                    try {
+                        YamlConfiguration newConfig = YamlConfiguration.loadConfiguration(configFile);
+
+                        if (fileName.equals("items.yml")) {
+                            Main.setItemConfig(newConfig);
+                        }
+
+                        new I18n.Builder("reloadFile", player)
+                                .hasPrefix(true)
+                                .withPlaceholder("fileName", args[1])
+                                .build()
+                                .sendMessageAsComponent();
+                    } catch (Exception e) {
+                        new I18n.Builder("reloadError", player)
+                                .hasPrefix(true)
+                                .withPlaceholder("fileName", args[1])
+                                .build()
+                                .sendMessageAsComponent();
+                        throw new RuntimeException(e);
+                    }
+                } else {new I18n.Builder("reloadFileNotFound", player)
+                            .hasPrefix(true)
+                            .withPlaceholder("fileName", args[1])
+                            .build()
+                            .sendMessageAsComponent();
+                }
             }
         }
         return true;

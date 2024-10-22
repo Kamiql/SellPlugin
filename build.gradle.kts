@@ -14,11 +14,16 @@ repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://jitpack.io")
+    maven {
+        url = uri("https://eldonexus.de/repository/maven-snapshots/")
+    }
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+
+    implementation("de.kamiql.i18n:I18n:2.0.17-SNAPSHOT")
     implementation("com.github.stefvanschie.inventoryframework:IF:0.10.17")
 }
 
@@ -54,9 +59,8 @@ tasks {
             include(dependency("com.github.stefvanschie.inventoryframework:IF"))
         }
 
-        destinationDirectory.set(file("C:/Users/kamiql/Desktop/Paper Server/plugins"))
+        destinationDirectory.set(file("C:\\Users\\kamiql\\IdeaProjects\\SellPlugin\\Output"))
     }
-
 
     bukkit {
         foliaSupported = true
@@ -83,7 +87,7 @@ tasks {
             }
         }
 
-        depend = listOf("Vault")
+        depend = listOf("Vault", "SMP-Core")
 
         load = BukkitPluginDescription.PluginLoadOrder.POSTWORLD
     }

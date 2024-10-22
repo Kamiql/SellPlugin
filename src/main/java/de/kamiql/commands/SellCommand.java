@@ -2,7 +2,7 @@ package de.kamiql.commands;
 
 import de.kamiql.Main;
 import de.kamiql.gui.SellGUI;
-import de.kamiql.util.Messages;
+import de.kamiql.i18n.core.source.I18n;
 import de.kamiql.util.Sellables;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -69,21 +69,26 @@ public class SellCommand implements TabExecutor, Listener {
             }
 
             if (selledItems > 0) {
-                String message = new Messages().getMessage("data.messages.sellCommand.sold")
-                        .replace("{total.price}", String.valueOf(total))
-                        .replace("{total.item_count}", String.valueOf(selledItems))
-                        .replace("{total.stack_count}", ((double) selledItems / 64) % 1 == 0
-                                ? String.format("%.1f", (double) selledItems / 64)
-                                : String.format("%.2f", (double) selledItems / 64));
+                new I18n.Builder("sold", player)
+                        .hasPrefix(true)
+                        .withPlaceholder("total.price", total)
+                        .withPlaceholder("total.item_count", String.valueOf(selledItems))
+                        .withPlaceholder("total.stack_count", ((double) selledItems / 64) % 1 == 0
+                                        ? String.format("%.1f", (double) selledItems / 64)
+                                        : String.format("%.2f", (double) selledItems / 64))
+                            .build()
+                                .sendMessageAsComponent();
 
-                player.sendMessage(message);
                 player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 1.0f, 1.0f);
                 Main.getEconomy().depositPlayer(player, total);
 
             } else if (!itemsToReturn.isEmpty()) {
-                player.sendMessage(new Messages().getMessage("data.messages.sellCommand.noItem"));
-                player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
+                new I18n.Builder("noItem", player)
+                        .hasPrefix(true)
+                            .build()
+                                .sendMessageAsComponent();
 
+                player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BASS, 1.0f, 1.0f);
             } else return;
 
             for (ItemStack item : itemsToReturn) {

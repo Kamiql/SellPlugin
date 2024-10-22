@@ -2,6 +2,7 @@ package de.kamiql;
 
 import de.kamiql.commands.ReloadCommand;
 import de.kamiql.commands.SellCommand;
+import de.kamiql.i18n.api.provider.I18nProvider;
 import de.kamiql.util.Logger;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -24,6 +25,8 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        new I18nProvider(this).initialize(messageConfig, false);
+
         instance = this;
 
         if (!setupEconomy()) {
@@ -38,7 +41,6 @@ public class Main extends JavaPlugin {
         }
 
         setupItemConfig();
-        setupMessageConfig();
         setupLogDirectory();
 
         this.getCommand("sell").setExecutor(new SellCommand());
@@ -61,10 +63,6 @@ public class Main extends JavaPlugin {
 
     private void setupMessageConfig() {
         File file = new File(this.getDataFolder(), "messages.yml");
-        if (!file.exists()) {
-            file.getParentFile().mkdirs();
-            saveResource("messages.yml", false);
-        }
         messageConfig = YamlConfiguration.loadConfiguration(file);
     }
 
@@ -110,32 +108,20 @@ public class Main extends JavaPlugin {
         return new Logger().initialize(logFile.getAbsolutePath());
     }
 
-    public static YamlConfiguration getItemConfig() {
-        return itemConfig;
-    }
-
-    public static YamlConfiguration getMessageConfig() {
-        return messageConfig;
-    }
-
     public static void setItemConfig(YamlConfiguration newItemConfig) {
         itemConfig = newItemConfig;
-    }
-
-    public static void setMessageConfig(YamlConfiguration newMessageConfig) {
-        messageConfig = newMessageConfig;
     }
 
     public static Main getInstance() {
         return instance;
     }
 
-    public static String getPrefix() {
-        return messageConfig.getString("data.prefix", "§7[§eSELL§7] §7");
-    }
-
     public static Economy getEconomy() {
         return econ;
+    }
+
+    public static YamlConfiguration getItemConfig() {
+        return itemConfig;
     }
 
     public static String getDateTime(String format) {

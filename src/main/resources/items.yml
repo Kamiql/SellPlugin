@@ -42,83 +42,83 @@ categories:
 items:
     # ORES Category
     COAL:
-        price: 1.5
+        price: 3.0
         category: "ORES"
 
     IRON_INGOT:
-        price: 1.5
+        price: 5.0
         category: "ORES"
 
     GOLD_INGOT:
-        price: 1.5
+        price: 5.0
         category: "ORES"
 
     DIAMOND:
-        price: 5.0
+        price: 10.0
         category: "ORES"
 
     EMERALD:
-        price: 4.0
+        price: 9.5
         category: "ORES"
 
     REDSTONE:
-        price: 1.5
+        price: 3.0
         category: "ORES"
 
     LAPIS_LAZULI:
-        price: 1.5
+        price: 3.0
         category: "ORES"
 
     NETHERITE_INGOT:
-        price: 100.0
+        price: 150.0
         category: "ORES"
 
     COPPER_INGOT:
-        price: 1.5
+        price: 0.9
         category: "ORES"
 
     RAW_COPPER:
-        price: 1.0
+        price: 1.2
         category: "ORES"
 
     RAW_GOLD:
-        price: 1.0
+        price: 4.0
         category: "ORES"
 
     RAW_IRON:
-        price: 1.0
+        price: 4.0
         category: "ORES"
 
     COAL_ORE:
-        price: 1.0
+        price: 7.0
         category: "ORES"
 
     IRON_ORE:
-        price: 1.0
+        price: 7.0
         category: "ORES"
 
     GOLD_ORE:
-        price: 1.0
+        price: 7.0
         category: "ORES"
 
     DIAMOND_ORE:
-        price: 5.0
+        price: 30.0
         category: "ORES"
 
     EMERALD_ORE:
-        price: 100.0
+        price: 50.0
         category: "ORES"
 
     REDSTONE_ORE:
-        price: 1.0
+        price: 5.0
         category: "ORES"
 
     LAPIS_ORE:
-        price: 1.0
+        price: 5.0
         category: "ORES"
 
     NETHER_GOLD_ORE:
-        price: 1.0
+        price: 5.0
         category: "ORES"
 
     ANCIENT_DEBRIS:
@@ -126,100 +126,56 @@ items:
         category: "ORES"
 
     COPPER_ORE:
-        price: 1.0
+        price: 2.9
         category: "ORES"
 
     DEEPSLATE_COAL_ORE:
-        price: 100.0
+        price: 50.0
         category: "ORES"
 
     DEEPSLATE_IRON_ORE:
-        price: 1.0
+        price: 10.0
         category: "ORES"
 
     DEEPSLATE_COPPER_ORE:
-        price: 1.0
+        price: 4.9
         category: "ORES"
 
     DEEPSLATE_GOLD_ORE:
-        price: 1.0
+        price: 10.0
         category: "ORES"
 
     DEEPSLATE_REDSTONE_ORE:
-        price: 1.0
+        price: 10.0
         category: "ORES"
 
     DEEPSLATE_EMERALD_ORE:
-        price: 1000.0
+        price: 100.0
         category: "ORES"
 
     DEEPSLATE_LAPIS_ORE:
-        price: 1.0
+        price: 10.0
         category: "ORES"
 
     DEEPSLATE_DIAMOND_ORE:
-        price: 5.0
-        category: "ORES"
-
-    COAL_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    IRON_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    GOLD_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    REDSTONE_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    EMERALD_BLOCK:
-        price: 36.0
-        category: "ORES"
-
-    LAPIS_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    DIAMOND_BLOCK:
-        price: 45.0
-        category: "ORES"
-
-    NETHERITE_BLOCK:
-        price: 900.0
-        category: "ORES"
-
-    RAW_IRON_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    RAW_COPPER_BLOCK:
-        price: 9.0
-        category: "ORES"
-
-    RAW_GOLD_BLOCK:
-        price: 9.0
+        price: 10.0
         category: "ORES"
 
     # BUILDING Category
     COBBLESTONE:
-        price: 0.5
+        price: 0.1
         category: "BUILDING"
 
     STONE:
-        price: 0.5
+        price: 0.2
         category: "BUILDING"
 
     GRANITE:
-        price: 0.5
+        price: 0.9
         category: "BUILDING"
 
     DIORITE:
-        price: 0.5
+        price: 0.9
         category: "BUILDING"
 
     ANDESITE:
@@ -227,23 +183,23 @@ items:
         category: "BUILDING"
 
     SAND:
-        price: 1.0
+        price: 0.2
         category: "BUILDING"
 
     SANDSTONE:
-        price: 2.0
+        price: 3.5
         category: "BUILDING"
 
     GRAVEL:
-        price: 1.0
+        price: 0.9
         category: "BUILDING"
 
     CLAY_BALL:
-        price: 0.5
+        price: 0.3
         category: "BUILDING"
 
     CLAY:
-        price: 2.0
+        price: 1.5
         category: "BUILDING"
 
     DIRT:
@@ -251,7 +207,7 @@ items:
         category: "BUILDING"
 
     GRASS_BLOCK:
-        price: 2.0
+        price: 0.5
         category: "BUILDING"
 
     SNOWBALL:
@@ -263,51 +219,51 @@ items:
         category: "BUILDING"
 
     PACKED_ICE:
-        price: 20.0
+        price: 12.5
         category: "BUILDING"
 
     BLUE_ICE:
-        price: 150.0
+        price: 34.5
         category: "BUILDING"
 
     OBSIDIAN:
-        price: 50.0
+        price: 16.0
         category: "BUILDING"
 
     NETHERRACK:
-        price: 0.5
+        price: 2.0
         category: "BUILDING"
 
     SOUL_SAND:
-        price: 1.0
+        price: 2.0
         category: "BUILDING"
 
     SOUL_SOIL:
-        price: 1.0
+        price: 2.0
         category: "BUILDING"
 
     BASALT:
-        price: 1.0
+        price: 2.0
         category: "BUILDING"
 
     BLACKSTONE:
-        price: 1.0
+        price: 2.0
         category: "BUILDING"
 
     GLOWSTONE:
-        price: 2.0
+        price: 4.0
         category: "BUILDING"
 
     QUARTZ:
-        price: 2.0
+        price: 4.0
         category: "BUILDING"
 
     SLIME_BLOCK:
-        price: 100.0
+        price: 35.0
         category: "BUILDING"
 
     HONEY_BLOCK:
-        price: 100.0
+        price: 29.0
         category: "BUILDING"
 
     # Colored Blocks
@@ -440,67 +396,67 @@ items:
         category: "COLORED"
 
     WHITE_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     ORANGE_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     MAGENTA_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     LIGHT_BLUE_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     YELLOW_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     LIME_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     PINK_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     GRAY_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     LIGHT_GRAY_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     CYAN_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     PURPLE_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     BLUE_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     BROWN_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     GREEN_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     RED_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     BLACK_TERRACOTTA:
-        price: 5.0
+        price: 10.0
         category: "COLORED"
 
     WHITE_WOOL:
@@ -697,100 +653,76 @@ items:
 
     # WOOD Category
     OAK_LOG:
-        price: 4.0
+        price: 0.9
         category: "WOOD"
 
     BIRCH_LOG:
-        price: 4.0
+        price: 0.9
         category: "WOOD"
 
     SPRUCE_LOG:
-        price: 4.0
+        price: 0.9
         category: "WOOD"
 
     JUNGLE_LOG:
-        price: 4.0
+        price: 0.9
         category: "WOOD"
 
     ACACIA_LOG:
-        price: 4.0
+        price: 0.9
         category: "WOOD"
 
     DARK_OAK_LOG:
-        price: 4.0
-        category: "WOOD"
-
-    CHERRY_LOG:
-        price: 5.0
-        category: "WOOD"
-
-    MANGROVE_LOG:
-        price: 5.0
+        price: 0.9
         category: "WOOD"
 
     CRIMSON_STEM:
-        price: 5.0
+        price: 1.5
         category: "WOOD"
 
     WARPED_STEM:
-        price: 5.0
-        category: "WOOD"
-
-    BAMBOO_BLOCK:
-        price: 4.0
+        price: 2.0
         category: "WOOD"
 
     STRIPPED_OAK_LOG:
-        price: 5.0
+        price: 2.0
         category: "WOOD"
 
     STRIPPED_BIRCH_LOG:
-        price: 5.0
+        price: 1.5
         category: "WOOD"
 
     STRIPPED_SPRUCE_LOG:
-        price: 5.0
+        price: 1.5
         category: "WOOD"
 
     STRIPPED_JUNGLE_LOG:
-        price: 5.0
+        price: 1.5
         category: "WOOD"
 
     STRIPPED_ACACIA_LOG:
-        price: 5.0
+        price: 1.5
         category: "WOOD"
 
     STRIPPED_DARK_OAK_LOG:
-        price: 5.0
+        price: 1.5
         category: "WOOD"
 
     STRIPPED_CRIMSON_STEM:
-        price: 6.0
+        price: 2.3
         category: "WOOD"
 
     STRIPPED_WARPED_STEM:
-        price: 6.0
-        category: "WOOD"
-
-    STRIPPED_CHERRY_LOG:
-        price: 5.0
-        category: "WOOD"
-
-    STRIPPED_MANGROVE_LOG:
-        price: 5.0
-        category: "WOOD"
-
-    STRIPPED_BAMBOO_BLOCK:
-        price: 5.0
+        price: 2.3
         category: "WOOD"
 
     # FOOD Category
     APPLE:
-        price: 2.0
+        price: 1.0
         category: "FOOD"
 
     BREAD:
-        price: 2.0
+        price: 0.5
         category: "FOOD"
 
     COOKED_BEEF:
@@ -798,15 +730,15 @@ items:
         category: "FOOD"
 
     COOKED_CHICKEN:
-        price: 2.0
+        price: 1.5
         category: "FOOD"
 
     COOKED_MUTTON:
-        price: 6.0
+        price: 1.9
         category: "FOOD"
 
     COOKED_PORKCHOP:
-        price: 2.0
+        price: 1.2
         category: "FOOD"
 
     COOKED_COD:
@@ -814,7 +746,7 @@ items:
         category: "FOOD"
 
     COOKED_SALMON:
-        price: 2.0
+        price: 2.5
         category: "FOOD"
 
     GOLDEN_APPLE:
@@ -822,11 +754,11 @@ items:
         category: "FOOD"
 
     ENCHANTED_GOLDEN_APPLE:
-        price: 1000.0
+        price: 200.0
         category: "FOOD"
 
     CAKE:
-        price: 15.0
+        price: 7.0
         category: "FOOD"
 
     COOKIE:
@@ -834,7 +766,7 @@ items:
         category: "FOOD"
 
     PUMPKIN_PIE:
-        price: 2.0
+        price: 3.0
         category: "FOOD"
 
     # MOB-DROPS Category
@@ -863,7 +795,7 @@ items:
         category: "MOB-DROPS"
 
     GHAST_TEAR:
-        price: 25.0
+        price: 15.0
         category: "MOB-DROPS"
 
     SLIME_BALL:
@@ -875,15 +807,15 @@ items:
         category: "MOB-DROPS"
 
     PHANTOM_MEMBRANE:
-        price: 5.0
+        price: 1.5
         category: "MOB-DROPS"
 
     MAGMA_CREAM:
-        price: 4.0
+        price: 3.5
         category: "MOB-DROPS"
 
     WITHER_SKELETON_SKULL:
-        price: 500.0
+        price: 50.0
         category: "MOB-DROPS"
 
     RABBIT_HIDE:
@@ -903,27 +835,27 @@ items:
         category: "MOB-DROPS"
 
     NAUTILUS_SHELL:
-        price: 125.0
+        price: 5.0
         category: "MOB-DROPS"
 
     TURTLE_SCUTE:
-        price: 50.0
+        price: 5.0
         category: "MOB-DROPS"
 
     FEATHER:
-        price: 2.0
+        price: 5.0
         category: "MOB-DROPS"
 
     ARMADILLO_SCUTE:
-        price: 50.0
+        price: 5.0
         category: "MOB-DROPS"
 
     ARROW:
-        price: 1.0
+        price: 5.0
         category: "MOB-DROPS"
 
     HONEYCOMB:
-        price: 25.0
+        price: 5.0
         category: "MOB-DROPS"
 
     PUFFERFISH:
@@ -934,69 +866,73 @@ items:
         price: 3.0
         category: "MOB-DROPS"
 
+    FISH_BONE:
+        price: 1.0
+        category: "MOB-DROPS"
+
     # Farming category
     WHEAT_SEEDS:
-        price: 1.0
+        price: 0.01
         category: "FARMING"
 
     WHEAT:
-        price: 2.0
+        price: 0.01
         category: "FARMING"
 
-    PUMPKIN_SEEDS:
-        price: 1.0
+    PUMPKIN_SSEDS:
+        price: 0.05
         category: "FARMING"
 
     PUMPKIN:
-        price: 5.0
+        price: 0.05
         category: "FARMING"
 
     MELON_SEEDS:
-        price: 1.0
+        price: 0.0
         category: "FARMING"
 
     MELON_SLICE:
-        price: 1.0
+        price: 0.05
         category: "FARMING"
 
     MELON:
-        price: 5.0
+        price: 0.05
         category: "FARMING"
 
     BEETROOT_SEEDS:
-        price: 1.0
+        price: 0.05
         category: "FARMING"
 
     BEETROOT:
-        price: 2.0
+        price: 0.07
         category: "FARMING"
 
     COCOA_BEANS:
-        price: 1.0
+        price: 0.08
         category: "FARMING"
 
     GLOW_BERRIES:
-        price: 2.0
+        price: 0.09
         category: "FARMING"
 
     SWEET_BERRIES:
-        price: 2.0
+        price: 0.1
         category: "FARMING"
 
     CARROT:
-        price: 2.0
+        price: 0.1
         category: "FARMING"
 
-    POTATO:
-        price: 2.0
+    POTATOE:
+        price: 0.1
         category: "FARMING"
 
     TORCHFLOWER_SEEDS:
-        price: 10.0
+        price: 0.1
         category: "FARMING"
 
     PITCHER_POD:
-        price: 10.0
+        price: 0.05
         category: "FARMING"
 
     # Other category
@@ -1005,11 +941,11 @@ items:
         category: "OTHER"
 
     TRIDENT:
-        price: 500.0
+        price: 100.0
         category: "OTHER"
 
     FIRE_CHARGE:
-        price: 50.0
+        price: 25.0
         category: "OTHER"
 
     SEA_PICKLE:
@@ -1017,9 +953,9 @@ items:
         category: "OTHER"
 
     TURTLE_EGG:
-        price: 50.0
+        price: 29.0
         category: "OTHER"
-
+    
     SNIFFER_EGG:
-        price: 100.0
+        price: 29.0
         category: "OTHER"

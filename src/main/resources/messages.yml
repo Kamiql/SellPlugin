@@ -1,24 +1,41 @@
-data:
-  messages:
-    sellCommand:
+config:
+  defaultLocale: "en-us"
+  prefix: "<gray>[<yellow>SELL<gray>] <gray>"
+  translations:
+    # Sell command
+    sold:
+      de-de:
+        - "Du hast <yellow>{total.stack_count} <gray>Stacks <dark_gray>({total.item_count} Gegenstände) <gray>für insgesamt: <green>{total.price}€ verkauft."
+      en-us:
+        - "You sold <yellow>{total.stack_count} <gray>stacks <dark_gray>({total.item_count} items) <gray>for a total: <green>{total.price}€"
 
-      noItem:
-        "No sellable items found!"
+    noItem:
+      de-de:
+        - "Es konnte kein Item verkauft werden!"
+      en-us:
+        - "No sellable items found!"
 
-      # Placeholders:
-      # {total.price} = money the player earned
-      # {total.stack_count} = Stacks the player sold
-      # {total.item_count} = Items the player sold
-      sold:
-        "You selled §e{total.stack_count} §7stacks §8({total.item_count} items) §7for a total: §a{total.price}€"
+    # Reload command
+    reloadConfig:
+      de-de:
+        - "Die Konfiguration wurde erfolgreich neu geladen."
+      en-us:
+        - "Configuration has been reloaded successfully."
 
-    loggerCommand:
-      wrongUsage: "Wrong usage! §8/logger getPath <player>"
+    reloadFile:
+      de-de:
+        - "Die Datei <yellow>{fileName} <gray>wurde erfolgreich neu geladen."
+      en-us:
+        - "The file <yellow>{fileName} <gray>has been reloaded successfully."
 
-      # Placeholder:
-      # {path} = absolute path to file
-      success: "File found! -> §b{path}"
+    reloadFileNotFound:
+      de-de:
+        - "Die Datei <yellow>{fileName} <gray>wurde nicht gefunden."
+      en-us:
+        - "The file <yellow>{fileName} <gray>could not be found."
 
-
-  prefix:
-    "§6§lNOTRIXMC §8• §7"
+    reloadError:
+      de-de:
+        - "Fehler beim Neuladen der <fileName><gray>."
+      en-us:
+        - "Error reloading the <fileName><gray>."
