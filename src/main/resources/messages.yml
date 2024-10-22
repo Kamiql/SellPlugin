@@ -1,41 +1,40 @@
-config:
-  defaultLocale: "en-us"
-  prefix: "<gray>[<yellow>SELL<gray>] <gray>"
-  translations:
-    # Sell command
-    sold:
-      de-de:
-        - "Du hast <yellow>{total.stack_count} <gray>Stacks <dark_gray>({total.item_count} Gegenstände) <gray>für insgesamt: <green>{total.price}€ verkauft."
-      en-us:
-        - "You sold <yellow>{total.stack_count} <gray>stacks <dark_gray>({total.item_count} items) <gray>for a total: <green>{total.price}€"
+defaultLocale: "en-us"
+prefix: "<gray>[<yellow>SELL<gray>] <gray>"
+translations:
+  # Sell command
+  sold:
+    de-de:
+      - "Du hast <yellow>{total.stack_count} <gray>Stacks <dark_gray>({total.item_count} Gegenstände) <gray>für insgesamt: <green>{total.price}€ verkauft."
+    en-us:
+      - "You sold <yellow>{total.stack_count} <gray>stacks <dark_gray>({total.item_count} items) <gray>for a total: <green>{total.price}€"
 
-    noItem:
-      de-de:
-        - "Es konnte kein Item verkauft werden!"
-      en-us:
-        - "No sellable items found!"
+  noItem:
+    de-de:
+      - "Es konnte kein Item verkauft werden!"
+    en-us:
+      - "No sellable items found!"
 
-    # Reload command
-    reloadConfig:
-      de-de:
-        - "Die Konfiguration wurde erfolgreich neu geladen."
-      en-us:
-        - "Configuration has been reloaded successfully."
+  # Reload command
+  reloadConfig:
+    de-de:
+      - "Die Konfiguration wurde erfolgreich neu geladen."
+    en-us:
+      - "Configuration has been reloaded successfully."
 
-    reloadFile:
-      de-de:
-        - "Die Datei <yellow>{fileName} <gray>wurde erfolgreich neu geladen."
-      en-us:
-        - "The file <yellow>{fileName} <gray>has been reloaded successfully."
+  reloadFile:
+    de-de:
+      - "Die Datei <yellow>{fileName} <gray>wurde erfolgreich neu geladen."
+    en-us:
+      - "The file <yellow>{fileName} <gray>has been reloaded successfully."
 
-    reloadFileNotFound:
-      de-de:
-        - "Die Datei <yellow>{fileName} <gray>wurde nicht gefunden."
-      en-us:
-        - "The file <yellow>{fileName} <gray>could not be found."
+  reloadFileNotFound:
+    de-de:
+      - "Die Datei <yellow>{fileName} <gray>wurde nicht gefunden."
+    en-us:
+      - "The file <yellow>{fileName} <gray>could not be found."
 
-    reloadError:
-      de-de:
-        - "Fehler beim Neuladen der <fileName><gray>."
-      en-us:
-        - "Error reloading the <fileName><gray>."
+  reloadError:
+    de-de:
+      - "Fehler beim Neuladen der <fileName><gray>."
+    en-us:
+      - "Error reloading the <fileName><gray>."
