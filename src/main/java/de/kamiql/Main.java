@@ -42,7 +42,7 @@ public class Main extends JavaPlugin {
         setupMessageConfig();
         setupLogDirectory();
 
-        new I18nProvider(this).initialize(messageConfig);
+        new I18nProvider(this).initialize(messageConfig, false);
 
         this.getCommand("sell").setExecutor(new SellCommand());
         this.getCommand("reload").setExecutor(new ReloadCommand(this));
@@ -63,7 +63,7 @@ public class Main extends JavaPlugin {
     }
 
     private void setupMessageConfig() {
-        File file = new File(this.getDataFolder(), "messages/messages.yml");
+        File file = new File(this.getDataFolder(), "language/messages.yml");
         messageConfig = YamlConfiguration.loadConfiguration(file);
     }
 
